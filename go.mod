@@ -1,4 +1,4 @@
-module github.com/bitrise-steplib/steps-xcode-archive
+module github.com/dashwave/steps-xcode-archive
 
 go 1.20
 
@@ -8,6 +8,7 @@ require (
 	github.com/bitrise-io/go-utils/v2 v2.0.0-alpha.20
 	github.com/bitrise-io/go-xcode v1.0.19
 	github.com/bitrise-io/go-xcode/v2 v2.0.0-alpha.45
+	github.com/bitrise-steplib/steps-xcode-archive v0.0.0-20240805072412-f0f967c32470
 	github.com/kballard/go-shellquote v0.0.0-20180428030007-95032a82bc51
 	github.com/stretchr/testify v1.8.4
 	gopkg.in/yaml.v3 v3.0.1
