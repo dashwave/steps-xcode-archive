@@ -142,12 +142,7 @@ func NewXcodebuildArchiver(xcodeVersionProvider XcodeVersionProvider, stepInputP
 }
 
 // ProcessInputs ...
-func (s XcodebuildArchiver) ProcessInputs() (Config, error) {
-	var inputs Inputs
-	if err := s.stepInputParser.Parse(&inputs); err != nil {
-		return Config{}, fmt.Errorf("issue with input: %s", err)
-	}
-
+func (s XcodebuildArchiver) ProcessInputs(inputs Inputs) (Config, error) {
 	stepconf.Print(inputs)
 	s.logger.Println()
 

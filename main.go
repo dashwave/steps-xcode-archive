@@ -3,7 +3,6 @@ package main
 import (
 	"errors"
 	"fmt"
-	"os"
 
 	"github.com/bitrise-io/go-steputils/v2/stepconf"
 	"github.com/bitrise-io/go-utils/v2/command"
@@ -14,15 +13,11 @@ import (
 	"github.com/bitrise-steplib/steps-xcode-archive/step"
 )
 
-func main() {
-	os.Exit(run())
-}
-
-func run() int {
+func Run(inputs *step.Inputs) int {
 	logger := log.NewLogger()
 	archiver := createXcodebuildArchiver(logger)
 
-	config, err := archiver.ProcessInputs()
+	config, err := archiver.ProcessInputs(*inputs)
 	if err != nil {
 		logger.Errorf(formattedError(fmt.Errorf("Failed to process Step inputs: %w", err)))
 		return 1

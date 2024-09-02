@@ -41,7 +41,10 @@ func TestXcodeArchiveStep_ProcessInputs(t *testing.T) {
 				logger:               log.NewLogger(),
 			}
 
-			config, err := s.ProcessInputs()
+			config, err := s.ProcessInputs(Inputs{
+				ProjectPath: tt.envs["project_path"],
+				Scheme:      tt.envs["scheme"],
+			})
 			gotErr := err != nil
 			wantErr := tt.err != ""
 			require.Equal(t, wantErr, gotErr, fmt.Sprintf("Step.ValidateConfig() error = %v, wantErr %v", err, tt.err))
