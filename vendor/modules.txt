@@ -60,6 +60,10 @@ github.com/bitrise-io/go-xcode/xcodeproject/xcodeproj
 github.com/bitrise-io/go-xcode/xcodeproject/xcscheme
 github.com/bitrise-io/go-xcode/xcodeproject/xcworkspace
 github.com/bitrise-io/go-xcode/xcpretty
+# github.com/dashwave/go-utils/v2 v2.0.0-20240902112930-19e66b67e6dd
+## explicit; go 1.17
+github.com/dashwave/go-utils/v2/log
+github.com/dashwave/go-utils/v2/log/colorstring
 # github.com/dashwave/go-xcode/v2 v2.0.0-20240902101435-4c827af742a9
 ## explicit; go 1.20
 github.com/dashwave/go-xcode/v2/autocodesign

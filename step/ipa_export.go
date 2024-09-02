@@ -1,9 +1,9 @@
 package step
 
 import (
-	"github.com/bitrise-io/go-utils/v2/log"
 	"github.com/bitrise-io/go-xcode/xcodebuild"
 	v1xcpretty "github.com/bitrise-io/go-xcode/xcpretty"
+	"github.com/dashwave/go-utils/v2/log"
 )
 
 func runIPAExportCommand(exportCmd *xcodebuild.ExportCommandModel, useXcpretty bool, logger log.Logger) (string, error) {

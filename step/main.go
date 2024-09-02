@@ -3,17 +3,20 @@ package step
 import (
 	"errors"
 	"fmt"
+	"os"
 
 	"github.com/bitrise-io/go-steputils/v2/stepconf"
 	"github.com/bitrise-io/go-utils/v2/command"
 	"github.com/bitrise-io/go-utils/v2/env"
 	"github.com/bitrise-io/go-utils/v2/fileutil"
-	"github.com/bitrise-io/go-utils/v2/log"
 	"github.com/bitrise-io/go-utils/v2/pathutil"
+	"github.com/dashwave/go-utils/v2/log"
 )
 
-func Run(inputs *Inputs) int {
+func Run(inputs *Inputs, logFile *os.File) int {
 	logger := log.NewLogger()
+	logger.SetOutput(logFile)
+
 	archiver := createXcodebuildArchiver(logger)
 
 	config, err := archiver.ProcessInputs(*inputs)

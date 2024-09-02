@@ -7,8 +7,8 @@ import (
 	"strings"
 
 	"github.com/bitrise-io/go-utils/sliceutil"
-	"github.com/bitrise-io/go-utils/v2/log"
 	"github.com/bitrise-io/go-xcode/exportoptions"
+	"github.com/dashwave/go-utils/v2/log"
 )
 
 func generateAdditionalOptions(platform string, customOptions []string) []string {

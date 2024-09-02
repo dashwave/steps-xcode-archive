@@ -9,7 +9,7 @@ import (
 	"github.com/bitrise-io/go-utils/fileutil"
 	"github.com/bitrise-io/go-utils/pathutil"
 	"github.com/bitrise-io/go-utils/v2/command"
-	"github.com/bitrise-io/go-utils/v2/log"
+	"github.com/dashwave/go-utils/v2/log"
 )
 
 func zip(cmdFactory command.Factory, sourceDir, destinationZipPth string, logger log.Logger) error {
