@@ -15,7 +15,10 @@ import (
 
 func Run(inputs *Inputs, logFile *os.File) int {
 	logger := log.NewLogger()
-	logger.SetOutput(logFile)
+
+	if logFile == nil {
+		logger.SetOutput(logFile)
+	}
 
 	archiver := createXcodebuildArchiver(logger)
 
