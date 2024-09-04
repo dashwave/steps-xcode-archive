@@ -721,7 +721,7 @@ func (s XcodebuildArchiver) createCodesignManager(config Config) (codesign.Manag
 
 	opts := codesign.Opts{
 		AuthType:                   authType,
-		ShouldConsiderXcodeSigning: true,
+		ShouldConsiderXcodeSigning: false,
 		TeamID:                     config.ExportDevelopmentTeam,
 		ExportMethod:               codesignConfig.DistributionMethod,
 		XcodeMajorVersion:          config.XcodeMajorVersion,
