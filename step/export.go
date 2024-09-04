@@ -3,7 +3,6 @@ package step
 import (
 	"fmt"
 	"path/filepath"
-	"strings"
 
 	v1command "github.com/bitrise-io/go-utils/command"
 	"github.com/bitrise-io/go-utils/fileutil"
@@ -28,10 +27,10 @@ func zip(cmdFactory command.Factory, sourceDir, destinationZipPth string, logger
 	return nil
 }
 
-func exportEnvironmentWithEnvman(cmdFactory command.Factory, keyStr, valueStr string) error {
-	cmd := cmdFactory.Create("envman", []string{"add", "--key", keyStr}, &command.Opts{Stdin: strings.NewReader(valueStr)})
-	return cmd.Run()
-}
+// func exportEnvironmentWithEnvman(cmdFactory command.Factory, keyStr, valueStr string) error {
+// 	cmd := cmdFactory.Create("envman", []string{"add", "--key", keyStr}, &command.Opts{Stdin: strings.NewReader(valueStr)})
+// 	return cmd.Run()
+// }
 
 // ExportOutputDir ...
 func ExportOutputDir(cmdFactory command.Factory, sourceDirPth, destinationDirPth, envKey string, logger log.Logger) error {
@@ -45,7 +44,7 @@ func ExportOutputDir(cmdFactory command.Factory, sourceDirPth, destinationDirPth
 		logger.TPrintf("Copied export output to %s", destinationDirPth)
 	}
 
-	return exportEnvironmentWithEnvman(cmdFactory, envKey, destinationDirPth)
+	return nil
 }
 
 // ExportOutputFile ...
@@ -56,7 +55,7 @@ func ExportOutputFile(cmdFactory command.Factory, sourcePth, destinationPth, env
 		}
 	}
 
-	return exportEnvironmentWithEnvman(cmdFactory, envKey, destinationPth)
+	return nil
 }
 
 // ExportOutputFileContent ...
